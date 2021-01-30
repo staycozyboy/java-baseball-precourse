@@ -68,4 +68,12 @@ public class Computer {
 
         return hundredDigit * 100 + tenDigit * 10 + oneDigit * 1;
     }
+
+    public int filterReceivedNum(int receivedNum) {
+        if(100 <= receivedNum && receivedNum <= 999) {
+            return receivedNum;
+        } else {
+            throw new IllegalArgumentException("100부터 999 이하의 숫자만 입력 가능합니다.");
+        }
+    }
 }
