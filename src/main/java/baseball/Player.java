@@ -1,6 +1,5 @@
 package baseball;
 
-import java.util.Scanner;
 
 public class Player{
     private static final int NUMBER_LIMIT = 3;
@@ -11,6 +10,7 @@ public class Player{
 
     public void validNumber(String number) throws IllegalArgumentException {
         isRightLength(number);
+        isRightValue(number);
         isDuplicated(number);
     }
     private void isRightLength(String number) {
