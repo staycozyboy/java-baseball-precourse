@@ -3,7 +3,7 @@ package baseball;
 import java.util.Scanner;
 
 public class GamePlay {
-    private Computer computer = new Computer();
+    private Computer computer;
     private Player player = new Player();
     private String number = "";
     private Scanner scanner;
@@ -13,6 +13,7 @@ public class GamePlay {
     public void playGame(){
         String isRestart;
         while (true) {
+            computer = new Computer();
             System.out.print("숫자를 입력해주세요 : ");
             try {
                 number = scanner.nextLine();
