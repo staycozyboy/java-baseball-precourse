@@ -12,6 +12,7 @@ public class Player{
         isRightLength(number);
         isRightValue(number);
         isDuplicated(number);
+        this.number = number;
     }
     private void isRightLength(String number) {
         if(number.length() != 3){

@@ -3,29 +3,27 @@ package baseball;
 import java.util.Scanner;
 
 public class GamePlay {
-    private Computer computer;
-    private Player player = new Player();
-    private String number = "";
-    private Scanner scanner;
+    private final Player player = new Player();
+    private final Scanner scanner;
     public GamePlay(Scanner scanner){
         this.scanner = scanner;
     }
     public void playGame(){
         String isRestart;
         while (true) {
-            computer = new Computer();
+            Computer computer = new Computer();
             System.out.print("숫자를 입력해주세요 : ");
             try {
-                number = scanner.nextLine();
+                String number = scanner.nextLine();
                 player.validNumber(number);
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
                 continue;
             }
-            if (isGameOver(computer.getNumber(), number)) {
+            if (isGameOver(computer.getNumber(), player.getNumber())) {
                 break;
             }
-            System.out.println(CompareNumber.resultMessage(computer.getNumber(), number));
+            System.out.println(CompareNumber.resultMessage(computer.getNumber(), player.getNumber()));
         }
         isRestart = replayGame();
         if(isRestart.equals("1")) {
