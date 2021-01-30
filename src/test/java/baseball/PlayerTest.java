@@ -2,29 +2,25 @@ package baseball;
 
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 import org.junit.jupiter.api.Test;
-import java.util.Scanner;
 
 
 public class PlayerTest {
     @Test
     void rightLengthException() {
-        Scanner scanner = new Scanner(System.in);
-        Player player = new Player(scanner);
+        Player player = new Player();
         String number = "1234";
-        assertThatIllegalArgumentException().isThrownBy(() -> player.isRightLength(number));
+        assertThatIllegalArgumentException().isThrownBy(() -> player.validNumber(number));
     }
     @Test
     void rightValueException() {
-        Scanner scanner = new Scanner(System.in);
-        Player player = new Player(scanner);
+        Player player = new Player();
         String number = "asd";
-        assertThatIllegalArgumentException().isThrownBy(() -> player.isRightValue(number));
+        assertThatIllegalArgumentException().isThrownBy(() -> player.validNumber(number));
     }
     @Test
     void duplicatedException() {
-        Scanner scanner = new Scanner(System.in);
-        Player player = new Player(scanner);
+        Player player = new Player();
         String number = "121";
-        assertThatIllegalArgumentException().isThrownBy(() -> player.isDuplicated(number));
+        assertThatIllegalArgumentException().isThrownBy(() -> player.validNumber(number));
     }
 }

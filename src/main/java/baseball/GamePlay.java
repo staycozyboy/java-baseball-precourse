@@ -4,17 +4,18 @@ import java.util.Scanner;
 
 public class GamePlay {
     private Computer computer = new Computer();
-    private Player player;
+    private Player player = new Player();
     private String number = "";
+    private Scanner scanner;
     public GamePlay(Scanner scanner){
-        player = new Player(scanner);
+        this.scanner = scanner;
     }
     public void playGame(){
         while (true) {
-
             System.out.print("숫자를 입력해주세요 : ");
             try {
-                number = player.createNumber();
+                number = scanner.nextLine();
+                player.validNumber(number);
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
                 continue;
