@@ -44,4 +44,14 @@ public class Computer {
         System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
         System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요");
     }
+
+    public boolean restartOrNot(int n) {        //true면 재시작, false면 종료
+        if(n == 1) {
+            return true;
+        } else if (n == 2) {        //2일 경우
+            return false;
+        } else {
+            throw new IllegalArgumentException("1이나 2를 입력해주세요.");
+        }
+    }
 }
