@@ -11,7 +11,7 @@ public class RandomUtilsTest {
     private final int NUMBER_LENGTH = 3;
 
     @Test
-    @DisplayName("3자리 난수를 생성하는지 테스트")
+//    @DisplayName("3자리 난수를 생성하는지 테스트")
     void create_3digits_random_number() {
         int randomNumber = RandomUtils.nextInt(START, END);
         assertThat(String.valueOf(randomNumber).length()).isEqualTo(NUMBER_LENGTH);
