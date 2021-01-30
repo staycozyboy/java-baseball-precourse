@@ -54,4 +54,18 @@ public class Computer {
             throw new IllegalArgumentException("1이나 2를 입력해주세요.");
         }
     }
+
+    public int createRandomNum() {         //서로 다른 수를 지닌 임의의 3자릿수 만들기.
+        int oneDigit = RandomUtils.nextInt(1, 9);
+        int tenDigit;
+        int hundredDigit;
+        do{
+            tenDigit = RandomUtils.nextInt(1, 9);
+        } while (oneDigit == tenDigit);
+        do{
+            hundredDigit = RandomUtils.nextInt(1, 9);
+        } while (hundredDigit == tenDigit || hundredDigit == oneDigit);
+
+        return hundredDigit * 100 + tenDigit * 10 + oneDigit * 1;
+    }
 }
