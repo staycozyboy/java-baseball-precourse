@@ -17,9 +17,9 @@ class NumberTest {
         // 가능하면 유효한 TC를 더 추가할 수 있도록 하자. 일단 시간 없어서 걍 넘어감. 테스트 코드도 리팩토링하자.
         Number numberFromInput = new Number(187);
         Number randomNumber = new Number();
-        assertThat((!ValidationUtils.isDuplicated(numberFromInput.getNumber())
-                && ValidationUtils.isInRange(numberFromInput.getNumber()))).isTrue();
-        assertThat((!ValidationUtils.isDuplicated(randomNumber.getNumber())
-                && ValidationUtils.isInRange(randomNumber.getNumber()))).isTrue();
+        assertThat((!ValidationUtils.isDuplicated(numberFromInput.getValue())
+                && ValidationUtils.isInRange(numberFromInput.getValue()))).isTrue();
+        assertThat((!ValidationUtils.isDuplicated(randomNumber.getValue())
+                && ValidationUtils.isInRange(randomNumber.getValue()))).isTrue();
     }
 }
