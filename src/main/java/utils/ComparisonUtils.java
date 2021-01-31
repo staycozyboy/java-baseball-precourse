@@ -14,7 +14,7 @@ public class ComparisonUtils {
         if (ball == 0) {
             return strike + "스트라이크";
         }
-        return ball + "볼" + strike + "스트라이크";
+        return ball + "볼 " + strike + "스트라이크";
     }
     private static int countStrike(String computerNumber, String playerNumber) {
         int strike = 0;
