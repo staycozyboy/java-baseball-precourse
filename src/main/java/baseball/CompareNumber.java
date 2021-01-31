@@ -1,7 +1,7 @@
 package baseball;
 
 public class CompareNumber {
-    public static String resultMessage(String computerNumber, String playerNumber) {
+    public static String getResultMessage(String computerNumber, String playerNumber) {
         int strike = countStrike(computerNumber, playerNumber);
         int ball = countBall(computerNumber, playerNumber);
 

@@ -8,7 +8,7 @@ public class Player{
     private String number = "";
 
 
-    public void validNumber(String number) throws IllegalArgumentException {
+    public void isValidNumber(String number) throws IllegalArgumentException {
         isRightLength(number);
         isRightValue(number);
         isDuplicated(number);

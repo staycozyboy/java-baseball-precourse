@@ -4,18 +4,19 @@ import java.util.Scanner;
 
 public class GamePlay {
     private final Player player = new Player();
+    private final Computer computer = new Computer();
     private final Scanner scanner;
     public GamePlay(Scanner scanner){
         this.scanner = scanner;
     }
     public void playGame(){
         String isRestart;
+        computer.generateNumber();
         while (true) {
-            Computer computer = new Computer();
             System.out.print("숫자를 입력해주세요 : ");
             try {
                 String number = scanner.nextLine();
-                player.validNumber(number);
+                player.isValidNumber(number);
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
                 continue;
@@ -23,7 +24,7 @@ public class GamePlay {
             if (isGameOver(computer.getNumber(), player.getNumber())) {
                 break;
             }
-            System.out.println(CompareNumber.resultMessage(computer.getNumber(), player.getNumber()));
+            System.out.println(CompareNumber.getResultMessage(computer.getNumber(), player.getNumber()));
         }
         isRestart = replayGame();
         if(isRestart.equals("1")) {
