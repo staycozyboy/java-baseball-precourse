@@ -1,5 +1,7 @@
 package baseball;
 
+import utils.ComparisonUtils;
+
 import java.util.Scanner;
 
 public class GamePlay {
@@ -24,7 +26,7 @@ public class GamePlay {
             if (isGameOver(computer.getNumber(), player.getNumber())) {
                 break;
             }
-            System.out.println(CompareNumber.getResultMessage(computer.getNumber(), player.getNumber()));
+            System.out.println(ComparisonUtils.getResultMessage(computer.getNumber(), player.getNumber()));
         }
         isRestart = replayGame();
         if(isRestart.equals("1")) {

@@ -1,6 +1,6 @@
-package baseball;
+package utils;
 
-public class CompareNumber {
+public class ComparisonUtils {
     public static String getResultMessage(String computerNumber, String playerNumber) {
         int strike = countStrike(computerNumber, playerNumber);
         int ball = countBall(computerNumber, playerNumber);
