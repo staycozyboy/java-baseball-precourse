@@ -17,7 +17,7 @@ public class InputHandler {
         do {
             System.out.println("숫자를 입력해주세요 : ");
             inputNumber = sc.nextInt();
-        } while ((!ValidationUtils.isInRange(inputNumber) && ValidationUtils.isDuplicated(inputNumber)));
+        } while ((!ValidationUtils.isInRange(inputNumber) || ValidationUtils.isDuplicated(inputNumber)));
 
         return new Number(inputNumber);
     }

@@ -1,10 +1,13 @@
 package baseball;
 
 public class BaseballProgramController {
-    public void run() {
+    private BaseballProgramController() {
+    }
+
+    public static void run() {
         boolean play = true;
 
-        while(play) {
+        while (play) {
             play = !BaseballGameController.run();
         }
     }
