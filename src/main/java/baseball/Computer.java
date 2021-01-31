@@ -16,7 +16,6 @@ public class Computer{
                 number = number + randomNumber;
             }
         }
-        this.number = number;
     }
     public String getNumber() {
         return number;
