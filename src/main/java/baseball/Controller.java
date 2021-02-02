@@ -6,19 +6,16 @@ public class Controller {
     private static int START = 1;
     private static int END = 2;
     private static int MAX_COUNT = 3;
-    public static boolean GAMEOVER = false;     //캡슐화깨고 전역으로 게임종료에 대한 정보 받는다.
+    private static boolean GAMEOVER;
 
-
-    public static void restartOrNot() {
+    public static int getRestartNumber() {
         Scanner scanner = new Scanner(System.in);
         OutputHandler.printEnd();
-        int n = scanner.nextInt();
-
-        try {
-            InputHandler.isVaildRestartNum(n);
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        }
+        int num = scanner.nextInt();
+        return num;
+    }
+    public static void restartOrNot(int n) {
+        InputHandler.isValidRestartNum(n);
 
         if(n == START) {
             GameLogic.run();
@@ -41,5 +38,13 @@ public class Controller {
 
     public static void stop() {
         GAMEOVER = true;
+    }
+
+    public static boolean getGAMEOVER() {
+        return GAMEOVER;
+    }
+
+    public static void setGAMEOVER(boolean GAMEOVER) {
+        Controller.GAMEOVER = GAMEOVER;
     }
 }

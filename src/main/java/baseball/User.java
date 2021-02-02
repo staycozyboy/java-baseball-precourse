@@ -10,7 +10,7 @@ public class User {
             OutputHandler.printStart();
             int receivedNum = insert();
 
-            InputHandler.isVaildReceivedNum(receivedNum);
+            InputHandler.isValidReceivedNum(receivedNum);
 
             OutputHandler.printCount(random, receivedNum);
 

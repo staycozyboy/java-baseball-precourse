@@ -1,7 +1,7 @@
 package baseball;
 
 public class InputHandler {
-    public static void isVaildReceivedNum(int receivedNum) {
+    public static boolean isValidReceivedNum(int receivedNum) {
         try {
             if(receivedNum < 100 || receivedNum > 999) {
                 throw new IllegalArgumentException();
@@ -9,12 +9,13 @@ public class InputHandler {
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
-
+        return true;
     }
 
-    public static void isVaildRestartNum(int restartOrNot) {
+    public static boolean isValidRestartNum(int restartOrNot) {
         if(restartOrNot != 1 && restartOrNot != 2) {
             throw new IllegalArgumentException();
         }
+        return true;
     }
 }

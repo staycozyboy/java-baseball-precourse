@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class NumberCreator {
-    public Set<Integer> randomNumbers;
+    public final Set<Integer> randomNumbers = new HashSet<>();
 
     public boolean isValidSize(Set<Integer> randomNumbers) {
         if (randomNumbers.size() == 3) {
@@ -16,7 +16,6 @@ public class NumberCreator {
     }
 
     public void createValidSet() {
-        randomNumbers = new HashSet<>();
         while (!isValidSize(randomNumbers)) {
             randomNumbers.add(RandomUtils.nextInt(1, 9));
         }
