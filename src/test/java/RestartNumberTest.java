@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 
-public class InputHandlerTest {
+public class RestartNumberTest {
     @Test
     public void 재시작관련해서_범위밖의_숫자_받을_때_예외_잘_발생하는지() {
         int num1 = RandomUtils.nextInt(3, 100);
