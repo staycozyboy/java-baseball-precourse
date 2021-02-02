@@ -2,22 +2,27 @@ package baseball;
 import java.util.Scanner;
 
 public class User {
-    Scanner scanner = new Scanner(System.in);
+    private static boolean THREESTRIKE;
 
-    public void play(Computer computer, int randomNum) {
-        while (true) {
-            computer.printPlaying();
-            int receivedNum = computer.filterReceivedNum(scanner.nextInt());
+    public void play(int random) {
+        THREESTRIKE = false;
+        do {
+            OutputHandler.printStart();
+            int receivedNum = insert();
 
-            String randomNumStr = Integer.toString(randomNum);
-            String receivedNumStr = Integer.toString(receivedNum);
+            InputHandler.isVaildReceivedNum(receivedNum);
 
-            computer.printCount(randomNumStr, receivedNumStr);
+            OutputHandler.printCount(random, receivedNum);
 
-            if (computer.getStrikeCount(randomNumStr, receivedNumStr) == 3) {
-                computer.printEndGame();
-                break;
+            if(Controller.isThreeStrike(random, receivedNum) == true) {
+                THREESTRIKE = true;
             }
-        }
+        } while (!THREESTRIKE);
+    }
+
+    public int insert() {
+        Scanner scanner = new Scanner(System.in);
+        int receivedNum = scanner.nextInt();
+        return receivedNum;
     }
 }
