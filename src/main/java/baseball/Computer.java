@@ -1,5 +1,4 @@
 package baseball;
-import utils.RandomUtils;
 
 public class Computer {
     private static Computer COMPUTER = new Computer();
@@ -15,7 +14,7 @@ public class Computer {
 
         for (int i = 0; i < goString(receivedNum).length(); i++) {
             if (goString(random).charAt(i) != goString(receivedNum).charAt(i)
-                    && goString(random).contains(goString(receivedNum).subSequence(i, i + 1))) {
+                    && goString(random).contains(String.valueOf(goString(receivedNum).charAt(i)))) {
                 ballCount++;
             }
         }
