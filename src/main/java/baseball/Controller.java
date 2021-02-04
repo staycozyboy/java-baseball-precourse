@@ -1,5 +1,8 @@
 package baseball;
 
+import baseball.verification.InputHandler;
+import baseball.verification.OutputHandler;
+
 import java.util.Scanner;
 
 public class Controller {
@@ -44,7 +47,7 @@ public class Controller {
         return GAMEOVER;
     }
 
-    public static void setGAMEOVER(boolean GAMEOVER) {
-        Controller.GAMEOVER = GAMEOVER;
+    public static void gameReady() {
+        GAMEOVER = false;
     }
 }
