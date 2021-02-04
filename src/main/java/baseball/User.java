@@ -1,4 +1,7 @@
 package baseball;
+import baseball.verification.InputHandler;
+import baseball.verification.OutputHandler;
+
 import java.util.Scanner;
 
 public class User {

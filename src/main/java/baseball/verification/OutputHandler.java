@@ -1,4 +1,6 @@
-package baseball;
+package baseball.verification;
+
+import baseball.Computer;
 
 public class OutputHandler {
     private static String MESSAGE = "숫자를 입력하세요 : ";

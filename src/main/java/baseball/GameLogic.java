@@ -2,7 +2,7 @@ package baseball;
 
 public class GameLogic {
     public static void run() {
-        Controller.setGAMEOVER(false);
+        Controller.gameReady();
         do {
             NumberCreator numberCreator = new NumberCreator();
             int random = numberCreator.createNonDuplicateRandomNum();

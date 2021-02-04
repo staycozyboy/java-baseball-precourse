@@ -1,4 +1,4 @@
-package baseball;
+package baseball.verification;
 
 public class InputHandler {
     public static boolean isValidReceivedNum(int receivedNum) {
