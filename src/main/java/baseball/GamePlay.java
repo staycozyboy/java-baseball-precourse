@@ -14,20 +14,19 @@ public class GamePlay {
     }
 
     public void playGame(){
-        String isRestart;
+        int isRestart = 0;
 
         computer.generateNumber();
-        while (true) {
+        while (isRestart != 2) {
             player.setNumber(Input.createNumber(scanner));
             System.out.println(ComparisonUtils.getResultMessage(computer.getNumber(), player.getNumber()));
             if (isGameOver(computer.getNumber(), player.getNumber())) {
-                break;
+                isRestart = Input.replayGame(scanner);
+                scanner.nextLine(); // 버퍼 비우기
             }
-        }
-
-        isRestart = replayGame();
-        if (isRestart.equals("1")) {
-            playGame();
+            if (isRestart == 1) {
+                computer.generateNumber(); // 다시 시작되면 컴퓨터넘버 다시 생성
+            }
         }
         System.out.println("종료");
     }
@@ -38,28 +37,5 @@ public class GamePlay {
             return true;
         }
         return false;
-    }
-
-    private String replayGame(){
-        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
-        String input = scanner.nextLine();
-
-        try {
-            isRightInput(input);
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-            replayGame();
-        }
-        return input;
-    }
-
-    private void isRightInput(String input) throws IllegalArgumentException {
-        if (!isValidInput(input)) {
-            throw new IllegalArgumentException("잘못된 입력값입니다.");
-        }
-    }
-
-    private boolean isValidInput(String input){
-        return input.equals("1") || input.equals("2");
     }
 }

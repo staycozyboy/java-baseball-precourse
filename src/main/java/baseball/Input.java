@@ -23,4 +23,20 @@ public class Input {
         }
         return inputNumber;
     }
+
+    public static int replayGame(Scanner scanner){
+        int inputNumber;
+        while(true) {
+            System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+            try {
+                inputNumber = scanner.nextInt();
+                if (ValidationUtils.isValidateNumber(inputNumber)) {
+                    break;
+                }
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        return inputNumber;
+    }
 }

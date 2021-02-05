@@ -12,6 +12,13 @@ public class ValidationUtils {
         return isRightLength(number) && isRightValue(number) && isDuplicated(number);
     }
 
+    public static boolean isValidateNumber(int number) throws IllegalArgumentException {
+        if(number == 1 || number == 2) {
+            return true;
+        }
+        throw new IllegalArgumentException("잘못된 입력값입니다.");
+    }
+
     private static boolean isRightLength(String number) {
         if(number.length() != NUMBER_LIMIT){
             throw new IllegalArgumentException("숫자는 3자리여야 합니다.");
