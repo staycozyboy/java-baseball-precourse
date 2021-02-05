@@ -37,7 +37,7 @@ public class Player{
             }
         }// 1번째 - 2번째, 2번째 - 3번째 같은지 비교
 
-        if(number.charAt(0) == number.charAt(2)) {
+        if (number.charAt(0) == number.charAt(2)) {
             throw new IllegalArgumentException("중복된 숫자가 있습니다.");
         }// 1번째 - 3번째 같은지 비교
     }
