@@ -13,7 +13,7 @@ public class ValidationUtils {
     }
 
     private static boolean isRightLength(String number) {
-        if(number.length() != 3){
+        if(number.length() != NUMBER_LIMIT){
             throw new IllegalArgumentException("숫자는 3자리여야 합니다.");
         }
         return true;

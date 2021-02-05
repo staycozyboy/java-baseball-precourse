@@ -18,18 +18,11 @@ public class GamePlay {
 
         computer.generateNumber();
         while (true) {
-            try {
-                System.out.print("숫자를 입력해주세요 : ");
-                String number = scanner.nextLine();
-                player.isValidNumber(number);
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-                continue;
-            }
+            player.setNumber(Input.createNumber(scanner));
+            System.out.println(ComparisonUtils.getResultMessage(computer.getNumber(), player.getNumber()));
             if (isGameOver(computer.getNumber(), player.getNumber())) {
                 break;
             }
-            System.out.println(ComparisonUtils.getResultMessage(computer.getNumber(), player.getNumber()));
         }
 
         isRestart = replayGame();
@@ -41,7 +34,6 @@ public class GamePlay {
 
     private boolean isGameOver(String computerNumber, String playerNumber) {
         if (computerNumber.equals(playerNumber)) {
-            System.out.println("3스트라이크");
             System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
             return true;
         }
