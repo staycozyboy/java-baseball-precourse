@@ -5,16 +5,19 @@ import java.util.stream.Collectors;
 
 
 public class ValidationUtils {
+    private static final int DECIMAL = 10;
+    private static final int OUTRANGED = 0;
+
     private ValidationUtils() {
     }
 
     public static boolean isInRange(int number) {
         while (number > 0) {
-            int digit = number % 10;
-            if (digit == 0) {
+            int digit = number % DECIMAL;
+            if (digit == OUTRANGED) {
                 return false;
             }
-            number /= 10;
+            number /= DECIMAL;
         }
         return true;
     }
