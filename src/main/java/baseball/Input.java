@@ -28,7 +28,8 @@ public class Input {
             try {
                 inputNumber = scanner.nextInt();
             } catch (InputMismatchException e) {
-
+                scanner.nextLine(); //버퍼비우기
+                continue;
             }
             scanner.nextLine(); //버퍼비우기
         } while (!ValidationUtils.isValidateNumber(inputNumber));
