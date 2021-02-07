@@ -8,10 +8,20 @@ public class ValidationUtils {
     private ValidationUtils() {
     }
 
+    /**
+     * 숫자가 유효한지 확인하는 메서드
+     * @param number 숫자
+     * @throws IllegalArgumentException 숫자의 길이가 3이 아니거나, 숫자가 아니거나, 중복되면 발생
+     */
     public static boolean isValidateNumber(String number) throws IllegalArgumentException {
         return isRightLength(number) && isRightValue(number) && isDuplicated(number);
     }
 
+    /**
+     * 숫자가 유효한지 확인하는 메서드
+     * @param number 숫자
+     * @throws IllegalArgumentException 숫자가 1또는 2가 아닐때 발생
+     */
     public static boolean isValidateNumber(int number) throws IllegalArgumentException {
         if (number == 1 || number == 2) {
             return true;
