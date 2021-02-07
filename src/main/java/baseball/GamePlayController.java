@@ -14,13 +14,13 @@ public class GamePlayController {
     }
 
     private boolean isReplay() {
-        int replay = 0;
+        int replayNumber = 0;
         try {
-            replay = Input.replayGame();
+            replayNumber = Input.getReplayNumber();
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             isReplay();
         }
-        return replay == 1;
+        return replayNumber == 1;
     }
 }

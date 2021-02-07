@@ -3,23 +3,23 @@ package baseball;
 import utils.ComparisonUtils;
 
 public class GamePlay {
-    private final PlayerNumber player = new PlayerNumber();
-    private final ComputerNumber computer = new ComputerNumber();
+    private final PlayerNumber playerNum = new PlayerNumber();
+    private final ComputerNumber computerNum = new ComputerNumber();
 
 
     public void playGame(){
-        computer.generateNumber();
+        computerNum.generateNumber();
         do {
             try {
-                player.setNumber(Input.createNumber());
+                playerNum.setNumber(Input.getCreatedNumber());
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
                 continue;
             }
 
-            System.out.println(ComparisonUtils.getResultMessage(computer.getNumber(), player.getNumber()));
+            System.out.println(ComparisonUtils.getResultMessage(computerNum.getNumber(), playerNum.getNumber()));
 
-        } while (!isGameOver(computer.getNumber(), player.getNumber()));
+        } while (!isGameOver(computerNum.getNumber(), playerNum.getNumber()));
     }
 
     private boolean isGameOver(String computerNumber, String playerNumber) {

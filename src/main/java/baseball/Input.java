@@ -10,7 +10,7 @@ public class Input {
     private Input() {
     }
 
-    public static String createNumber() {
+    public static String getCreatedNumber() {
         String inputNumber;
         do {
             System.out.print("숫자를 입력해주세요 : ");
@@ -20,7 +20,7 @@ public class Input {
         return inputNumber;
     }
 
-    public static int replayGame(){
+    public static int getReplayNumber(){
         int inputNumber;
         do {
             System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
