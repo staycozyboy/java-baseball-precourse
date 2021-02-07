@@ -15,7 +15,7 @@ public class Input {
         do {
             System.out.print("숫자를 입력해주세요 : ");
             inputNumber = scanner.nextLine();
-        } while(!ValidationUtils.isValidateNumber(inputNumber));
+        } while (!ValidationUtils.isValidateNumber(inputNumber));
 
         return inputNumber;
     }
@@ -25,7 +25,7 @@ public class Input {
         do {
             System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
             inputNumber = scanner.nextInt();
-        } while(!ValidationUtils.isValidateNumber(inputNumber));
+        } while (!ValidationUtils.isValidateNumber(inputNumber));
         scanner.nextLine(); //버퍼비우기
 
         return inputNumber;
