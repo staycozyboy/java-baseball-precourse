@@ -1,16 +1,17 @@
 package baseball;
 
 public class GameLogic {
+    public static User user = new User();
+    public static NumberCreator numberCreator = new NumberCreator();
+
     public static void run() {
-        Controller.gameReady();
+        RestartController.gameReady();
         do {
-            NumberCreator numberCreator = new NumberCreator();
             int random = numberCreator.createNonDuplicateRandomNum();
 
-            User user = new User();
             user.play(random);
 
-            Controller.restartOrNot(Controller.getRestartNumber());
-        } while (!Controller.getGAMEOVER());
+            RestartController.restartOrNot(InputHandler.getValidRestartNum());
+        } while (!RestartController.getGAMEOVER());
     }
 }
