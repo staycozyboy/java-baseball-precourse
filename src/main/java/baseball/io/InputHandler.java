@@ -11,7 +11,7 @@ public class InputHandler {
     private InputHandler() {
     }
 
-    public static Number getNumber() {
+    public static int getUserNumber() {
         int inputNumber;
 
         do {
@@ -19,7 +19,7 @@ public class InputHandler {
             inputNumber = sc.nextInt();
         } while ((!ValidationUtils.isInRange(inputNumber) || ValidationUtils.isDuplicated(inputNumber)));
 
-        return new Number(inputNumber);
+        return inputNumber;
     }
 
     public static boolean getTerminateOrNot() {

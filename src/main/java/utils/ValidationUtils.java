@@ -2,7 +2,6 @@ package utils;
 
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 
 public class ValidationUtils {
@@ -12,7 +11,7 @@ public class ValidationUtils {
     public static boolean isInRange(int number) {
         while (number > 0) {
             int digit = number % 10;
-            if(digit == 0) {
+            if (digit == 0) {
                 return false;
             }
             number /= 10;
@@ -35,6 +34,4 @@ public class ValidationUtils {
     public static boolean isDuplicated(int number) {
         return isDuplicated(Integer.toString(number));
     }
-
-
 }

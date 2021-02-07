@@ -4,6 +4,7 @@ import utils.RandomUtils;
 import utils.ValidationUtils;
 
 public class Number {
+    // 리팩토링 필요함. Number 빌더로 해서 난수와 인풋 둘다 생성될 때 validation을 마쳐서 생성하려 했는데, 잘 구현 못했음. 더 갈끔하게 해보자.
     private final int START = 100;
     private final int END = 999;
 
@@ -11,12 +12,6 @@ public class Number {
 
     public Number() {
         createNumber();
-    }
-
-    public Number(int userInput) {
-        // 여기서 뭔가 error를 raise한 하는 방법 없을까? 이거 호출하는 곳에서는 error 안나올때까지 반복하고.
-        // 리팩토링 무조건 해야할 부분. 빌더 패턴의 잘못된 예.
-        this.number = userInput;
     }
 
     private void createNumber() {

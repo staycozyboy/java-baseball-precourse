@@ -10,13 +10,13 @@ public class BaseballGameController {
 
     public static void run() {
         int randomNumber = new Number().getValue();
-        int userInput;
+        int userNumber;
         int[] result;  // 0: Strike, 1: Ball
         System.out.println(String.format("정답 : %d", randomNumber));  // For Testing
 
         do {
-            userInput = InputHandler.getNumber().getValue();
-            result = NumberComparator.compare(randomNumber, userInput);
+            userNumber = InputHandler.getUserNumber();
+            result = NumberComparator.compare(randomNumber, userNumber);
             OutputHandler.printResult(result[0], result[1]);
         } while (result[0] < 3);
     }

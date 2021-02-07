@@ -8,14 +8,14 @@ public class NumberComparator {
     public static int[] compare(String randomNumber, String userInput) {
         int[] result = {0, 0};
         for (int i = 0; i < NUMBER_LENGTH; i++) {
-            for(int j = 0; j < NUMBER_LENGTH; j++)
-                if(randomNumber.charAt(i) == userInput.charAt(j)) {
+            for (int j = 0; j < NUMBER_LENGTH; j++)
+                if (randomNumber.charAt(i) == userInput.charAt(j)) {
                     result[1]++;
                 }
         }
 
-        for(int i = 0; i < NUMBER_LENGTH; i++) {
-            if(randomNumber.charAt(i) == userInput.charAt(i)) {
+        for (int i = 0; i < NUMBER_LENGTH; i++) {
+            if (randomNumber.charAt(i) == userInput.charAt(i)) {
                 result[0]++;
             }
         }
