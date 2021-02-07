@@ -5,38 +5,29 @@ import utils.ValidationUtils;
 import java.util.Scanner;
 
 public class Input {
+    private static final Scanner scanner = new Scanner(System.in);
+
     private Input() {
     }
 
-    public static String createNumber(Scanner scanner) {
+    public static String createNumber() {
         String inputNumber;
-        while(true) {
-            try {
-                System.out.print("숫자를 입력해주세요 : ");
-                inputNumber = scanner.nextLine();
-                if (ValidationUtils.isValidateNumber(inputNumber)) {
-                    break;
-                }
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-            }
-        }
+        do {
+            System.out.print("숫자를 입력해주세요 : ");
+            inputNumber = scanner.nextLine();
+        } while(!ValidationUtils.isValidateNumber(inputNumber));
+
         return inputNumber;
     }
 
-    public static int replayGame(Scanner scanner){
+    public static int replayGame(){
         int inputNumber;
-        while(true) {
+        do {
             System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
-            try {
-                inputNumber = scanner.nextInt();
-                if (ValidationUtils.isValidateNumber(inputNumber)) {
-                    break;
-                }
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-            }
-        }
+            inputNumber = scanner.nextInt();
+        } while(!ValidationUtils.isValidateNumber(inputNumber));
+        scanner.nextLine(); //버퍼비우기
+
         return inputNumber;
     }
 }
