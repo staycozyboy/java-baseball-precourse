@@ -13,14 +13,14 @@ public class ValidationUtils {
     }
 
     public static boolean isValidateNumber(int number) throws IllegalArgumentException {
-        if(number == 1 || number == 2) {
+        if (number == 1 || number == 2) {
             return true;
         }
         throw new IllegalArgumentException("잘못된 입력값입니다.");
     }
 
     private static boolean isRightLength(String number) {
-        if(number.length() != NUMBER_LIMIT){
+        if (number.length() != NUMBER_LIMIT) {
             throw new IllegalArgumentException("숫자는 3자리여야 합니다.");
         }
         return true;
@@ -41,7 +41,7 @@ public class ValidationUtils {
                 throw new IllegalArgumentException("중복된 숫자가 있습니다.");
             }
         }// 1번째 - 2번째, 2번째 - 3번째 같은지 비교
-        if(number.charAt(0) == number.charAt(2)) {
+        if (number.charAt(0) == number.charAt(2)) {
             throw new IllegalArgumentException("중복된 숫자가 있습니다.");
         }// 1번째 - 3번째 같은지 비교
         return true;
