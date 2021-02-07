@@ -5,8 +5,8 @@ import utils.ComparisonUtils;
 import java.util.Scanner;
 
 public class GamePlay {
-    private final Player player = new Player();
-    private final Computer computer = new Computer();
+    private final PlayerNumber player = new PlayerNumber();
+    private final ComputerNumber computer = new ComputerNumber();
     private final Scanner scanner;
 
     public GamePlay(Scanner scanner){
@@ -26,6 +26,7 @@ public class GamePlay {
             }
             if (isRestart == 1) {
                 computer.generateNumber(); // 다시 시작되면 컴퓨터넘버 다시 생성
+                isRestart = 0;
             }
         }
         System.out.println("종료");
