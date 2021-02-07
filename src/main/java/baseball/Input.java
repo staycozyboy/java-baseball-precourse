@@ -22,12 +22,13 @@ public class Input {
     }
 
     public static int getReplayNumber(){
-        int inputNumber;
+        int inputNumber = 0;
         do {
             System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
             try {
                 inputNumber = scanner.nextInt();
             } catch (InputMismatchException e) {
+
             }
             scanner.nextLine(); //버퍼비우기
         } while (!ValidationUtils.isValidateNumber(inputNumber));

@@ -1,6 +1,7 @@
 package baseball;
 
 public class GamePlayController {
+    private static final int RESTART = 1;
     private final GamePlay gamePlay = new GamePlay();
 
     public void executeProgram() {
@@ -21,6 +22,6 @@ public class GamePlayController {
             System.out.println(e.getMessage());
             isReplay();
         }
-        return replayNumber == 1;
+        return replayNumber == RESTART;
     }
 }
